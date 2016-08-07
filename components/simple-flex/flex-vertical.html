@@ -1,0 +1,126 @@
+<!--
+@license MIT
+
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<!--
+`<flex-vertical>` gives you a simpler way for flex layouts.
+
+Ideally for prototyping.
+
+
+### CSS
+```
+<flex-vertical class="[start, center, end]">....</flex-vertical>
+
+```
+
+  - **start** aligns children to left
+  - **center** aligns children in the middle
+  - **end** aligns children to right
+
+Classes for the child elements:
+ - **flex** makes child dynamic
+ - **flex-1** to **flex-12** size ratio for the child elements
+
+
+
+@author veith
+@date 05.07.16
+@hero path/to/image
+@demo demo/index.html
+-->
+
+<dom-module id="flex-vertical">
+
+  <template>
+
+    <style>
+      :host {
+        height: 100%;
+        display: block;
+        @apply(--layout-vertical);
+      }
+
+      :host(.center) {
+        @apply(--layout-center);
+      }
+
+      :host(.start) {
+        @apply(--layout-start);
+      }
+
+      :host(.end) {
+        @apply(--layout-end);
+      }
+
+      ::content > .flex {
+        @apply(--layout-flex);
+      }
+
+      ::content > .flex-1 {
+        @apply(--layout-flex);
+      }
+
+      ::content > .flex-2 {
+        @apply(--layout-flex-2);
+      }
+
+      ::content > .flex-3 {
+        @apply(--layout-flex-3);
+      }
+
+      ::content > .flex-4 {
+        @apply(--layout-flex-4);
+      }
+
+      ::content > .flex-5 {
+        @apply(--layout-flex-5);
+      }
+
+      ::content > .flex-6 {
+        @apply(--layout-flex-6);
+      }
+
+      ::content > .flex-7 {
+        @apply(--layout-flex-7);
+      }
+
+      ::content > .flex-8 {
+        @apply(--layout-flex-8);
+      }
+
+      ::content > .flex-9 {
+        @apply(--layout-flex-9);
+      }
+
+      ::content > .flex-10 {
+        @apply(--layout-flex-10);
+      }
+
+      ::content > .flex-11 {
+        @apply(--layout-flex-11);
+      }
+
+      ::content > .flex-12 {
+        @apply(--layout-flex-12);
+      }
+
+      ::content > .flex-auto {
+        @apply(--layout-flex-auto);
+      }
+
+    </style>
+
+    <content></content>
+  </template>
+
+  <script>
+
+    Polymer({
+      is: 'flex-vertical',
+      properties: {}
+    });
+  </script>
+</dom-module>

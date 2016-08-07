@@ -1,0 +1,123 @@
+<!--
+@license MIT
+
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<!--
+`<flex-horizontal>` gives you a simpler way for flex layouts.
+
+Ideally for prototyping.
+
+### CSS
+```
+<flex-horizontal class="[start, center, end]">....</flex-horizontal>
+```
+
+  - **start** aligns children to top
+  - **center** aligns children in the middle
+  - **end** aligns children to baseline
+
+Classes for the child elements:
+ - **flex** makes child dynamic
+ - **flex-1** to **flex-12** size ratio for the child elements
+
+
+
+@author veith
+@date 05.07.16
+@hero path/to/image
+@demo demo/index.html
+-->
+
+<dom-module id="flex-horizontal">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+        @apply(--layout-horizontal);
+      }
+
+      :host(.center) {
+        @apply(--layout-center);
+      }
+
+      :host(.start) {
+        @apply(--layout-start);
+      }
+
+      :host(.end) {
+        @apply(--layout-end);
+      }
+
+      ::content > .flex {
+        @apply(--layout-flex);
+      }
+
+      ::content > .flex-1 {
+        @apply(--layout-flex);
+      }
+
+      ::content > .flex-2 {
+        @apply(--layout-flex-2);
+      }
+
+      ::content > .flex-3 {
+        @apply(--layout-flex-3);
+      }
+
+      ::content > .flex-4 {
+        @apply(--layout-flex-4);
+      }
+
+      ::content > .flex-5 {
+        @apply(--layout-flex-5);
+      }
+
+      ::content > .flex-6 {
+        @apply(--layout-flex-6);
+      }
+
+      ::content > .flex-7 {
+        @apply(--layout-flex-7);
+      }
+
+      ::content > .flex-8 {
+        @apply(--layout-flex-8);
+      }
+
+      ::content > .flex-9 {
+        @apply(--layout-flex-9);
+      }
+
+      ::content > .flex-10 {
+        @apply(--layout-flex-10);
+      }
+
+      ::content > .flex-11 {
+        @apply(--layout-flex-11);
+      }
+
+      ::content > .flex-12 {
+        @apply(--layout-flex-12);
+      }
+
+      ::content > .flex-auto {
+        @apply(--layout-flex-auto);
+      }
+
+    </style>
+
+    <content></content>
+  </template>
+
+  <script>
+
+    Polymer({
+      is: 'flex-horizontal',
+      properties: {}
+    });
+  </script>
+</dom-module>

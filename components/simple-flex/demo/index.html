@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+  <head>
+    <title>simple-flex demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+
+    <link rel="import" href="../simple-flex.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+      
+      .green{
+        background-color: #4caf50;
+        color: whitesmoke;
+        text-align: center;
+        line-height: 40px;
+      }
+      .orange{
+        background-color: #ff9800;
+        color: black;
+        text-align: center;
+        line-height: 40px;
+      }
+      .blue{
+        background-color: #2196f3;
+        color: black;
+        text-align: center;
+        line-height: 40px;
+      }
+      flex-horizontal{
+        height: 333px;
+      }
+    </style>
+    
+  </head>
+  <body>
+
+    <div class="vertical-section-container centered">
+      <h2>flex-horizontal, flex-vertical</h2>
+      Place any item inside a flex-horizontal, flex-vertival and give a class like flex, flex-2,...
+
+
+      <h3>simple example</h3>
+      each child gets the same space
+      <demo-snippet>
+        <template>
+          <flex-horizontal>
+            <div class="flex green">A</div>
+            <div class="flex orange">B</div>
+            <div class="flex blue">C</div>
+          </flex-horizontal>
+        </template>
+      </demo-snippet>
+
+      <h3>Mixed usage</h3>
+      mix flex-horizontal and flex-vertical
+      <demo-snippet>
+        <template>
+          <flex-horizontal>
+          <flex-vertical class="flex-2">
+            <div class="flex green">A</div>
+            <div class="flex-2 orange">B</div>
+            <div class="flex blue">C</div>
+          </flex-vertical>
+          <flex-vertical class="flex-2">
+            <div class="flex green">D</div>
+            <div class="flex blue">E</div>
+          </flex-vertical>
+          </flex-horizontal>
+        </template>
+      </demo-snippet>
+
+
+
+      <h3>Flex with ratio</h3>
+      <p>Use flex-1 to flex-12 to define the ratios. <br>
+      Attention: this is not a 12 grid.
+      </p>
+      <demo-snippet>
+        <template>
+          <flex-horizontal>
+            <div class="flex-5 green">A</div>
+            <div class="flex-8 orange">B</div>
+          </flex-horizontal>
+        </template>
+      </demo-snippet>
+
+
+      <h3>align center</h3>
+
+      <demo-snippet>
+        <template>
+          <flex-horizontal class="center">
+            <div class="flex green">A</div>
+            <div class="flex orange">B <br> uses a lot of space</div>
+            <div class="flex green">C</div>
+            <div class="flex orange">D <br>is smaller</div>
+            <div class="flex green">E</div>
+          </flex-horizontal>
+        </template>
+      </demo-snippet>
+
+      <h3>Align start</h3>
+
+      <demo-snippet>
+        <template>
+          <flex-horizontal class="start">
+            <div class="flex green">A</div>
+            <div class="flex orange">B braucht Platz</div>
+            <div class="flex green">C</div>
+            <div class="flex orange">D ist klein</div>
+            <div class="flex green">E</div>
+          </flex-horizontal>
+        </template>
+      </demo-snippet>
+
+      <h3>Align end</h3>
+
+      <br>
+      <br>
+      <br>
+      <demo-snippet>
+        <template>
+          <flex-horizontal class="end">
+            <div class="flex green">A</div>
+            <div class="flex orange">B braucht Platz</div>
+            <div class="flex green">C</div>
+            <div class="flex orange">D ist klein</div>
+            <div class="flex green">E</div>
+          </flex-horizontal>
+        </template>
+      </demo-snippet>
+
+      <h3>Flex ratios</h3>
+      A is 6 times bigger then C and B is 3 times bigger then C, therfore A is 2 times bigger then B
+      <demo-snippet>
+        <template>
+          <flex-horizontal>
+            <div class="flex-6 green">A 5</div>
+            <div class="flex-3 orange">B 3</div>
+            <div class="flex-1 blue">C 1</div>
+          </flex-horizontal>
+        </template>
+      </demo-snippet>
+
+      <h3>mixing flex and non flex</h3>
+      If you have elements without flex, they use the space they nedd. The remaining space is shared for the other elements (with ratios)
+      <demo-snippet>
+        <template>
+          <flex-horizontal>
+            <div class="green">&lt;-- A 5 --&gt;</div>
+            <div class="flex-3 orange">B 3</div>
+            <div class="flex-1 blue">C 1</div>
+          </flex-horizontal>
+        </template>
+      </demo-snippet>
+      
+    </div>
+
+  </body>
+</html>
